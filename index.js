@@ -1,21 +1,27 @@
-const section1 = document.querySelector(".section1");
+const images = document.querySelectorAll("[data-src]");
 
-//* Default value for options
-// const options = {
-//     root:null,
-//     threshold:0, Percentage of what you're listening to is on the page
-//     rootMargin:"String" think it of as margin e.g. "-150px" from top of viewport
-// }
+const imageObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        loadImage(entry.target);
+        imageObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0,
+    rootMargin: "0px 0px 320px 0px",
+  }
+);
 
-const options = {
-  root: null,
-  threshold: 0,
-  rootMargin: "0px",
-};
+images.forEach((image) => {
+  imageObserver.observe(image);
+});
 
-//* const observer = new IntersectionObserver(callback(entries),options)
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => console.log(entry));
-}, options);
+function loadImage(imageELement) {
+  console.log(imageELement);
+  const src = imageELement.getAttribute("data-src");
 
-observer.observe(section1);
+  imageELement.src = src;
+}

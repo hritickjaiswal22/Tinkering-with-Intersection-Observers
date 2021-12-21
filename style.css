@@ -30,3 +30,14 @@
 .section2 {
   background-color: palegreen;
 }
+
+.imageBox {
+  width: 500px;
+  min-height: 300px;
+  margin: 30px auto;
+  background-color: orangered;
+}
+
+.image {
+  width: 100%;
+}
