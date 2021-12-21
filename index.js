@@ -3,14 +3,14 @@ const section1 = document.querySelector(".section1");
 //* Default value for options
 // const options = {
 //     root:null,
-//     threshold:0,
+//     threshold:0, Percentage of what you're listening to is on the page
 //     rootMargin:"String" think it of as margin e.g. "-150px" from top of viewport
 // }
 
 const options = {
   root: null,
   threshold: 0,
-  rootMargin: "-156.5px",
+  rootMargin: "0px",
 };
 
 //* const observer = new IntersectionObserver(callback(entries),options)
