@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.article1,
+.article2 {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.article1 {
+  background-color: peru;
+}
+
+.article2 {
+  background-color: plum;
+}
+
+.section1,
+.section2 {
+  width: 800px;
+  height: 400px;
+  background-color: orangered;
+}
+
+.section2 {
+  background-color: palegreen;
+}
